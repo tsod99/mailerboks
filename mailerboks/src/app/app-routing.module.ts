@@ -1,10 +1,22 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [];
+import { LandingpageComponent } from './landingpage/landingpage.component';
+import { SignupComponent } from './signup/signup.component';
+import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { NavbarComponent } from './navbar/navbar.component';
+
+const routes: Routes = [
+  { path: '', component: LandingpageComponent },
+  { path: 'signup', component: SignupComponent, pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'navbar', component: NavbarComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

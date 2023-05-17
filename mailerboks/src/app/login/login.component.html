@@ -1,34 +1,66 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <div class="loginBody">
-    <div class="loginName">
-      <div class="loginName1"><span style="color: #1026F2;">mailer</span><span style="color: #000000;">boks</span></div>
-    </div>
-    <div class="loginMessage">Log in</div>
-    <div class="login-form">
-      <form class="loginForm">
-        <label for="email" class="loginlabel">Email</label>
-        <input class="logininput" placeholder="Email" type="text" id="email" name="email" required>
-        <label for="password" class="loginlabel">Password</label>
-        <input class="logininput" placeholder="Password" type="password" id="password" name="password" required>
-        <label class="loginlabel" id="noAccount">Don't have an account? <a class="createaccountlink" href="https://www.example.com">Create new</a></label>
-        <button class="logininput" id="login">Log in</button>
-        <div class="forgetpassword">
-          <div class="forgetpassword1">
-            <input type="checkbox" class="forgetpasswordcheckbox">
-            <p>Remember me</p>
-          </div>
-          <p><a class="forgetpassword2" href="https://www.example.com">Forget password?</a></p>
+  <head>
+    <meta name="author" content="Ajdin Sirbegovic" />
+    <meta name="copyright" content="Ajdin Sirbegovic" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="loginBody">
+      <div class="loginName">
+        <div class="loginName1">
+          <span style="color: #1026f2">mailer</span
+          ><span style="color: #000000">boks</span>
         </div>
-      </form>
+      </div>
+      <div class="loginMessage">Log in</div>
+      <div class="login-form">
+        <form class="loginForm">
+          <label for="email" class="loginlabel">Email</label>
+          <input
+            class="logininput"
+            placeholder="Email"
+            type="text"
+            id="email"
+            name="email"
+            [(ngModel)]="email"
+            required
+          />
+          <label for="password" class="loginlabel">Password</label>
+          <input
+            class="logininput"
+            placeholder="Password"
+            type="password"
+            id="password"
+            name="password"
+            [(ngModel)]="password"
+            required
+          />
+          <label class="loginlabel" id="noAccount"
+            >Don't have an account?
+            <a class="createaccountlink" href="https://www.example.com"
+              >Create new</a
+            ></label
+          >
+          <button class="logininput" id="login" (click)="login()">
+            Log in
+          </button>
+          <div class="forgetpassword">
+            <div class="forgetpassword1">
+              <input type="checkbox" class="forgetpasswordcheckbox" />
+              <p>Remember me</p>
+            </div>
+            <p>
+              <a class="forgetpassword2" href="https://www.example.com"
+                >Forget password?</a
+              >
+            </p>
+          </div>
+        </form>
+      </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>

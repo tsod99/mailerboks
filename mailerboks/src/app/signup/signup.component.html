@@ -1,1 +1,144 @@
-<p>signup works!</p>
+<div class="loginBody">
+  <div class="loginName">
+    <div class="loginName1">
+      <span style="color: #1026f2">mailer</span
+      ><span style="color: #000000">boks</span>
+    </div>
+  </div>
+  <div class="loginDots">
+    <div class="dot1"></div>
+    <div class="dot2"></div>
+    <div class="dot3"></div>
+  </div>
+  <div class="loginMessage">Create Your Account</div>
+  <div class="login-form">
+    <form class="loginForm" [formGroup]="signupForm" (ngSubmit)="submitForm()">
+      <label for="firstName" class="loginlabel">First name</label>
+      <input
+        class="logininput"
+        placeholder="First name"
+        type="text"
+        id="firstName"
+        name="firstName"
+        formControlName="firstName"
+        required
+      />
+      <div
+        style="color: red"
+        class="error-message"
+        *ngIf="
+          signupForm.get('firstName')?.invalid &&
+          signupForm.get('firstName')?.touched
+        "
+      >
+        First name is required
+      </div>
+
+      <label for="lastName" class="loginlabel">Last name</label>
+      <input
+        class="logininput"
+        placeholder="Last name"
+        type="text"
+        id="lastName"
+        name="lastName"
+        formControlName="lastName"
+        required
+      />
+      <div
+        style="color: red"
+        class="error-message"
+        *ngIf="
+          signupForm.get('lastName')?.invalid &&
+          signupForm.get('lastName')?.touched
+        "
+      >
+        Last name is required
+      </div>
+
+      <label for="email" class="loginlabel">Email</label>
+      <input
+        class="logininput"
+        placeholder="Email"
+        type="text"
+        id="email"
+        name="email"
+        formControlName="email"
+        required
+      />
+      <div
+        style="color: red"
+        class="error-message"
+        *ngIf="
+          signupForm.get('email')?.invalid &&
+          signupForm.get('email')?.touched &&
+          signupForm.get('email')?.errors?.['required']
+        "
+      >
+        Email is required
+      </div>
+      <div
+        style="color: red"
+        class="error-message"
+        *ngIf="signupForm.get('email')?.errors?.['email'] && signupForm.get('email')?.touched"
+      >
+        Please enter a valid email address
+      </div>
+
+      <label for="password" class="loginlabel">Password</label>
+      <input
+        class="logininput"
+        placeholder="Password"
+        type="password"
+        id="password"
+        name="password"
+        formControlName="password"
+        required
+      />
+      <div
+        style="color: red"
+        class="error-message"
+        *ngIf="
+          signupForm.get('password')?.invalid &&
+          signupForm.get('password')?.touched &&
+          signupForm.get('password')?.errors?.['required']
+        "
+      >
+        Password is required
+      </div>
+      <div
+        style="color: red"
+        class="error-message"
+        *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched && signupForm.get('password')?.errors?.['minlength']"
+      >
+        Password should be at least 8 characters long
+      </div>
+
+      <label for="phoneNumber" class="loginlabel"
+        >Phone number<span style="color: #b1bbce"> - optional</span></label
+      >
+      <input
+        class="logininput"
+        type="text"
+        id="phoneNumber"
+        name="phoneNumber"
+        formControlName="phoneNumber"
+      />
+      <label class="loginlabel" id="haveAccount">
+        Already have an account?
+        <a class="loginlink" href="https://www.example.com">Log in</a>
+      </label>
+      <button class="logininput" id="createAccount">Create Your Account</button>
+
+      <label class="loginlabel" id="termsofservice">
+        By signing up, you agree to
+        <a class="termsofservice" href="https://www.example.com"
+          >Terms of Service</a
+        >
+        and
+        <a class="termsofservice" href="https://www.example.com"
+          >Privacy Policy</a
+        >
+      </label>
+    </form>
+  </div>
+</div>
